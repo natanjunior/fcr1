@@ -14,9 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
         mainwindow.cpp \
-    canvas.cpp
+    canvas.cpp \
+    robo.cpp
 
 HEADERS  += mainwindow.h \
-    canvas.h
+    canvas.h \
+    robo.h
 
 FORMS    += mainwindow.ui
