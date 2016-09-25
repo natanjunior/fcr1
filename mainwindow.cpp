@@ -42,6 +42,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e){
     default:
         break;
     }
+    ui->tela->updateGL();
 }
 
 void MainWindow::keyReleaseEvent(QKeyEvent *e){

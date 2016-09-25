@@ -1,14 +1,26 @@
 #include "robo.h"
 
 robo::robo(){
-    this->x = 0.0f;
-    this->y = 0.0f;
+    this->xDianteira = 0.3f;
+    this->xTraseira = -0.3f;
+    this->yDianteira = 0.2f;
+    this->yTraseira = -0.2f;
     this->direcao = 0.0f;
-    this->velocidade = 0.1f;    //  constante
+    this->volante = 0.0f;
+    this->velocidade = 0.5f;    //  constante
 }
 
 void robo::acelerar(){
-
+    xTraseira += velocidade*cos(direcao);
+    yTraseira += velocidade*sin(direcao);
+    xDianteira += velocidade*(cos(direcao+volante));
+    yDianteira += velocidade*(sin(direcao+volante));
+    direcao = atan2((yDianteira-yTraseira), (xDianteira-xTraseira));
+//    xTraseira += velocidade;
+//    xDianteira += velocidade;
+//    yTraseira += velocidade;
+//    yDianteira += velocidade;
+//    direcao = volante;
 }
 
 void robo::freiar(){
@@ -20,15 +32,15 @@ void robo::re(){
 }
 
 int robo::virarEsq(){
-    if(direcao>=-45.0f)
-        direcao-=fatorVirada;
-    return direcao;
+    if(volante>=-45.0f)
+        volante-=fatorVirada;
+    return volante;
 }
 
 int robo::virarDir(){
-    if(direcao<=+45.0f)
-        direcao+=fatorVirada;
-    return direcao;
+    if(volante<=+45.0f)
+        volante+=fatorVirada;
+    return volante;
 }
 
 void robo::reiniciar(){
@@ -36,11 +48,11 @@ void robo::reiniciar(){
 }
 
 float robo::getX(){
-    return x;
+    return (xDianteira+xTraseira)/2;
 }
 
 float robo::getY(){
-    return y;
+    return (xDianteira+xTraseira)/2;
 }
 
 float robo::getTeta(){

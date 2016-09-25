@@ -1,15 +1,22 @@
 #ifndef ROBO_H
 #define ROBO_H
 
-#define fatorVirada 5.0f
+#include <math.h>
+
+#define fatorVirada 0.5f
 #define de 0.6f //  distancia entre os eixos
 
 class robo{
 public:
     robo();
-    float x;
-    float y;
+    float xLoc;
+    float yLoc;
+    float xTraseira;
+    float yTraseira;
+    float xDianteira;
+    float yDianteira;
     float direcao;
+    float volante;
     float velocidade;
     void acelerar();
     void freiar();

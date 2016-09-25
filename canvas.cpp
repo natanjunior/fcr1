@@ -58,9 +58,10 @@ void canvas::desenhaGrade(){
 }
 
 void canvas::desenhaRobo(){
+    qDebug() << "x " << marvin->getX() << " y " << marvin->getY() << " d " << marvin->getTeta();
     glPushMatrix();
-    glTranslatef(0.0f, y, 0.0f);
-    glRotatef(teta, 0.0f, 0.0f, 1.0f);
+    glTranslatef(0.0f, marvin->getX(), marvin->getY());
+    glRotatef(marvin->getTeta(), 0.0f, 0.0f, 1.0f);
     glBegin(GL_QUADS);
     glColor3f(1.0f, 0.0f, 0.0f);
     glVertex3f(-0.2f, -0.4f, 0.2f);
@@ -93,5 +94,5 @@ void canvas::resizeGL(int width, int height){
     glMatrixMode(GL_PROJECTION);
     glClearColor(0, 0, 0, 1);
     glLoadIdentity();
-    glOrtho(-10.0f, 10.0f, -10.0f, 10.0f, -1.0f, 1.0f);
+    glOrtho(-10.0f, 10.0f, -10.0f, 10.0f, -10.0f, 10.0f);
 }
