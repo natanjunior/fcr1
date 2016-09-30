@@ -1,5 +1,7 @@
 #include "robo.h"
 
+#include <QDebug>
+
 robo::robo(){
     this->xDianteira = 0.3f;
     this->xTraseira = -0.3f;
@@ -10,12 +12,27 @@ robo::robo(){
     this->velocidade = 0.5f;    //  constante
 }
 
+void robo::calculaDirecao(){
+    direcao += volante;
+    if(direcao>=360){
+        direcao = 0;
+    }else if (direcao<0){
+        direcao = 355;
+    }
+    if(volante>0){
+        volante -= fatorVirada;
+    }else if(volante<0){
+        volante += fatorVirada;
+    }
+}
+
 void robo::acelerar(){
+    calculaDirecao();
     xTraseira += velocidade*cos(direcao);
     yTraseira += velocidade*sin(direcao);
-    xDianteira += velocidade*(cos(direcao+volante));
-    yDianteira += velocidade*(sin(direcao+volante));
-    direcao = atan2((yDianteira-yTraseira), (xDianteira-xTraseira));
+    xDianteira += velocidade*sin(direcao);
+    yDianteira += velocidade*cos(direcao);
+//    direcao = atan2((yDianteira-yTraseira), (xDianteira-xTraseira));
 //    xTraseira += velocidade;
 //    xDianteira += velocidade;
 //    yTraseira += velocidade;
@@ -34,13 +51,17 @@ void robo::re(){
 int robo::virarEsq(){
     if(volante>=-45.0f)
         volante-=fatorVirada;
-    return volante;
+    return volante+45;
 }
 
 int robo::virarDir(){
     if(volante<=+45.0f)
         volante+=fatorVirada;
-    return volante;
+    return volante+45;
+}
+
+int robo::getVolante(){
+    return volante+45;
 }
 
 void robo::reiniciar(){
@@ -48,11 +69,12 @@ void robo::reiniciar(){
 }
 
 float robo::getX(){
-    return (xDianteira+xTraseira)/2;
+    return xDianteira;
+//    return (xDianteira+xTraseira)/2;
 }
 
 float robo::getY(){
-    return (xDianteira+xTraseira)/2;
+    return yDianteira;
 }
 
 float robo::getTeta(){

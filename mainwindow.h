@@ -25,7 +25,7 @@ protected:
     void keyReleaseEvent(QKeyEvent *event);
 
 signals:
-    void direcaoChanged(int teta);
+    void direcaoChanged(int direcao);
 };
 
 #endif // MAINWINDOW_H

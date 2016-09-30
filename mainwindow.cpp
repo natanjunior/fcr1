@@ -26,15 +26,19 @@ void MainWindow::keyPressEvent(QKeyEvent *e){
     switch (e->key()) {
     case Qt::Key_Up:
         marvin->acelerar();
+        emit direcaoChanged(marvin->getVolante());
+        ui->fieldX->setText(QString::number(marvin->getX()));
+        ui->fieldY->setText(QString::number(marvin->getY()));
+        ui->fieldTeta->setText(QString::number(marvin->getTeta()));
         break;
     case Qt::Key_Down:
         marvin->re();
         break;
     case Qt::Key_Left:
-        emit direcaoChanged(marvin->virarEsq()+45);
+        emit direcaoChanged(marvin->virarEsq());
         break;
     case Qt::Key_Right:
-        emit direcaoChanged(marvin->virarDir()+45);
+        emit direcaoChanged(marvin->virarDir());
         break;
     case Qt::Key_Space:
         marvin->freiar();

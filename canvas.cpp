@@ -60,7 +60,7 @@ void canvas::desenhaGrade(){
 void canvas::desenhaRobo(){
     qDebug() << "x " << marvin->getX() << " y " << marvin->getY() << " d " << marvin->getTeta();
     glPushMatrix();
-    glTranslatef(0.0f, marvin->getX(), marvin->getY());
+    glTranslatef(marvin->getX(), marvin->getY(), 0.0f);
     glRotatef(marvin->getTeta(), 0.0f, 0.0f, 1.0f);
     glBegin(GL_QUADS);
     glColor3f(1.0f, 0.0f, 0.0f);
@@ -68,10 +68,10 @@ void canvas::desenhaRobo(){
     glVertex3f(-0.2f, 0.4f, 0.2f);
     glVertex3f(0.2f, 0.4f, 0.2f);
     glVertex3f(0.2f, -0.4f, 0.2f);
-//    glVertex3f(x-0.2f, y-0.4f, 0.2f);
-//    glVertex3f(x-0.2f, y+0.4f, 0.2f);
-//    glVertex3f(x+0.2f, y+0.4f, 0.2f);
-//    glVertex3f(x+0.2f, y-0.4f, 0.2f);
+//    glVertex3f(marvin->getX()-0.2f, marvin->getY()-0.4f, 0.2f);
+//    glVertex3f(marvin->getX()-0.2f, marvin->getY()+0.4f, 0.2f);
+//    glVertex3f(marvin->getX()+0.2f, marvin->getY()+0.4f, 0.2f);
+//    glVertex3f(marvin->getX()+0.2f, marvin->getY()-0.4f, 0.2f);
     glEnd();
     glPopMatrix();
 }

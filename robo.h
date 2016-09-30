@@ -2,8 +2,9 @@
 #define ROBO_H
 
 #include <math.h>
+#include <QtMath>
 
-#define fatorVirada 0.5f
+#define fatorVirada 5.0f
 #define de 0.6f //  distancia entre os eixos
 
 class robo{
@@ -27,6 +28,8 @@ public:
     float getX();
     float getY();
     float getTeta();
+    void calculaDirecao();
+    int getVolante();
 };
 
 #endif // MARVIN_H
