@@ -30,8 +30,8 @@ void robo::acelerar(){
     calculaDirecao();
     xTraseira += velocidade*cos(direcao);
     yTraseira += velocidade*sin(direcao);
-    xDianteira += velocidade*sin(direcao);
-    yDianteira += velocidade*cos(direcao);
+    xDianteira += velocidade*sin(direcao+volante);
+    yDianteira += velocidade*cos(direcao+volante);
 //    direcao = atan2((yDianteira-yTraseira), (xDianteira-xTraseira));
 //    xTraseira += velocidade;
 //    xDianteira += velocidade;
@@ -49,13 +49,13 @@ void robo::re(){
 }
 
 int robo::virarEsq(){
-    if(volante>=-45.0f)
+    if(volante>-45.0f)
         volante-=fatorVirada;
     return volante+45;
 }
 
 int robo::virarDir(){
-    if(volante<=+45.0f)
+    if(volante<45.0f)
         volante+=fatorVirada;
     return volante+45;
 }
@@ -69,14 +69,19 @@ void robo::reiniciar(){
 }
 
 float robo::getX(){
-    return xDianteira;
-//    return (xDianteira+xTraseira)/2;
+//    return xDianteira;
+    return (xDianteira+xDianteira)/2;
 }
 
 float robo::getY(){
-    return yDianteira;
+//    return yDianteira;
+    return (yDianteira+yDianteira)/2;
 }
 
 float robo::getTeta(){
     return direcao;
+}
+
+float robo::getVelocidade(){
+    return velocidade;
 }

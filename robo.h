@@ -30,6 +30,7 @@ public:
     float getTeta();
     void calculaDirecao();
     int getVolante();
+    float getVelocidade();
 };
 
 #endif // MARVIN_H

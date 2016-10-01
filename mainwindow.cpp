@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->fieldX->setText(QString::number(marvin->getX()));
     ui->fieldY->setText(QString::number(marvin->getY()));
     ui->fieldTeta->setText(QString::number(marvin->getTeta()));
+    ui->fieldVelocidade->setText(QString::number(marvin->getVelocidade()));
+    ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
 
     connect(this, SIGNAL(direcaoChanged(int)), ui->uSlider, SLOT(setValue(int)));
 }
@@ -30,15 +32,19 @@ void MainWindow::keyPressEvent(QKeyEvent *e){
         ui->fieldX->setText(QString::number(marvin->getX()));
         ui->fieldY->setText(QString::number(marvin->getY()));
         ui->fieldTeta->setText(QString::number(marvin->getTeta()));
+        ui->fieldVelocidade->setText(QString::number(marvin->getVelocidade()));
+        ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
         break;
     case Qt::Key_Down:
         marvin->re();
         break;
     case Qt::Key_Left:
         emit direcaoChanged(marvin->virarEsq());
+        ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
         break;
     case Qt::Key_Right:
         emit direcaoChanged(marvin->virarDir());
+        ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
         break;
     case Qt::Key_Space:
         marvin->freiar();

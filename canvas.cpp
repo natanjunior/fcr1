@@ -62,12 +62,14 @@ void canvas::desenhaRobo(){
     glPushMatrix();
     glTranslatef(marvin->getX(), marvin->getY(), 0.0f);
     glRotatef(marvin->getTeta(), 0.0f, 0.0f, 1.0f);
-    glBegin(GL_QUADS);
+    glBegin(GL_POLYGON);
     glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(-0.2f, -0.4f, 0.2f);
     glVertex3f(-0.2f, 0.4f, 0.2f);
-    glVertex3f(0.2f, 0.4f, 0.2f);
+    glVertex3f(-0.2f, -0.4f, 0.2f);
     glVertex3f(0.2f, -0.4f, 0.2f);
+    glVertex3f(0.2f, 0.4f, 0.2f);
+    glColor3f(1.0f, 0.25f, 0.25f);
+    glVertex3f(0.0f, 0.6f, 0.2f);
 //    glVertex3f(marvin->getX()-0.2f, marvin->getY()-0.4f, 0.2f);
 //    glVertex3f(marvin->getX()-0.2f, marvin->getY()+0.4f, 0.2f);
 //    glVertex3f(marvin->getX()+0.2f, marvin->getY()+0.4f, 0.2f);
