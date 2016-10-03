@@ -225,16 +225,16 @@
             <enum>Qt::NoFocus</enum>
            </property>
            <property name="minimum">
-            <number>0</number>
+            <number>-30</number>
            </property>
            <property name="maximum">
-            <number>90</number>
+            <number>30</number>
            </property>
            <property name="singleStep">
             <number>5</number>
            </property>
            <property name="value">
-            <number>45</number>
+            <number>0</number>
            </property>
            <property name="tracking">
             <bool>true</bool>

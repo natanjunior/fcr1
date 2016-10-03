@@ -5,13 +5,17 @@
 #include <QtMath>
 
 #define fatorVirada 5.0f
+#define limiteVirada 30.0f
 #define de 0.6f //  distancia entre os eixos
 
 class robo{
 public:
     robo();
+    float x0;
+    float y0;
     float xLoc;
     float yLoc;
+    float raio;
     float xTraseira;
     float yTraseira;
     float xDianteira;
