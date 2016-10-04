@@ -8,14 +8,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tela->setGeometry(0, 0, 600, 600);
 
-    marvin = new robo();
-    ui->tela->setRobo(marvin);
+    robo = new roboPontual();
+    ui->tela->setRobo(robo);
 
-    ui->fieldX->setText(QString::number(marvin->getX()));
-    ui->fieldY->setText(QString::number(marvin->getY()));
-    ui->fieldTeta->setText(QString::number(marvin->getTeta()));
-    ui->fieldVelocidade->setText(QString::number(marvin->getVelocidade()));
-    ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
+    ui->fieldX->setText(QString::number(robo->getX()));
+    ui->fieldY->setText(QString::number(robo->getY()));
+    ui->fieldTeta->setText(QString::number(robo->getTeta()));
+    ui->fieldVelocidade->setText(QString::number(robo->getVelocidade()));
+    ui->fieldDirecao->setText(QString::number(robo->getVolante()));
 
     connect(this, SIGNAL(direcaoChanged(int)), ui->uSlider, SLOT(setValue(int)));
 }
@@ -27,27 +27,27 @@ MainWindow::~MainWindow(){
 void MainWindow::keyPressEvent(QKeyEvent *e){
     switch (e->key()) {
     case Qt::Key_Up:
-        marvin->acelerar();
-        emit direcaoChanged(marvin->getVolante());
-        ui->fieldX->setText(QString::number(marvin->getX()));
-        ui->fieldY->setText(QString::number(marvin->getY()));
-        ui->fieldTeta->setText(QString::number(marvin->getTeta()));
-        ui->fieldVelocidade->setText(QString::number(marvin->getVelocidade()));
-        ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
+        robo->acelerar();
+        emit direcaoChanged(robo->getVolante());
+        ui->fieldX->setText(QString::number(robo->getX()));
+        ui->fieldY->setText(QString::number(robo->getY()));
+        ui->fieldTeta->setText(QString::number(robo->getTeta()));
+        ui->fieldVelocidade->setText(QString::number(robo->getVelocidade()));
+        ui->fieldDirecao->setText(QString::number(robo->getVolante()));
         break;
     case Qt::Key_Down:
-        marvin->re();
+        robo->freiar();
         break;
     case Qt::Key_Left:
-        emit direcaoChanged(marvin->virarEsq());
-        ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
+        emit direcaoChanged(robo->virarEsq());
+        ui->fieldDirecao->setText(QString::number(robo->getVolante()));
         break;
     case Qt::Key_Right:
-        emit direcaoChanged(marvin->virarDir());
-        ui->fieldDirecao->setText(QString::number(marvin->getVolante()));
+        emit direcaoChanged(robo->virarDir());
+        ui->fieldDirecao->setText(QString::number(robo->getVolante()));
         break;
     case Qt::Key_Space:
-        marvin->freiar();
+        robo->reiniciar();
         break;
     default:
         break;

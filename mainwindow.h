@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "robo.h"
+#include "roboAckerman.h"
+#include "roboPontual.h"
 
 namespace Ui {
 class MainWindow;
@@ -15,7 +17,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    robo *marvin;
+    robo *robo;
 
 private:
     Ui::MainWindow *ui;

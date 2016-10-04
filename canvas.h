@@ -4,7 +4,7 @@
 #include <QGLWidget>
 #include <QtWidgets>
 #include <QtOpenGL>
-#include "robo.h"
+#include "roboPontual.h"
 
 class canvas : public QGLWidget{
     Q_OBJECT
