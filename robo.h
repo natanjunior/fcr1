@@ -27,6 +27,9 @@ public:
     virtual void calculaDirecao();
     int getVolante();
     float getVelocidade();
+    virtual float getRcolor();
+    virtual float getGcolor();
+    virtual float getBcolor();
 };
 
 #endif // ROBO_H

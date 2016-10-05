@@ -62,8 +62,11 @@
          </item>
          <item>
           <widget class="QRadioButton" name="rbAckerman">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="text">
-            <string>Ackerman</string>
+            <string>Ackerman*</string>
            </property>
           </widget>
          </item>
@@ -296,10 +299,26 @@
          </item>
         </layout>
        </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>* Implementação não finalizada.</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item>
       <widget class="canvas" name="tela" native="true">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
          <horstretch>1</horstretch>

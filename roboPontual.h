@@ -15,6 +15,9 @@ public:
     virtual int virarDir();
     virtual void reiniciar();
     virtual void calculaDirecao();
+    virtual float getRcolor();
+    virtual float getGcolor();
+    virtual float getBcolor();
 };
 
 #endif // ROBOPONTUAL_H

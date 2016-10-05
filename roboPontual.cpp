@@ -54,9 +54,27 @@ int roboPontual::virarDir(){
 }
 
 void roboPontual::reiniciar(){
+    xLoc = x0 = 0;
+    yLoc = y0 = 0;
+    raio = 0;
 
+    direcao = 0.0f;
+    volante = 0.0f;
+    velocidade = 0.5f;
 }
 
 void roboPontual::freiar(){
 
+}
+
+float roboPontual::getRcolor(){
+    return 0.0f;
+}
+
+float roboPontual::getGcolor(){
+    return 1.0f;
+}
+
+float roboPontual::getBcolor(){
+    return 0.0f;
 }

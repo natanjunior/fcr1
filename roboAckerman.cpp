@@ -65,9 +65,27 @@ int roboAckerman::virarDir(){
 }
 
 void roboAckerman::reiniciar(){
-
+    xLoc = x0 = 0;
+    yLoc = y0 = 0;
+    raio = 0;
+    direcao = 0.0f;
+    volante = 0.0f;
+    comprimento = 1.0f;
+    velocidade = 0.5f;
 }
 
 void roboAckerman::freiar(){
 
+}
+
+float roboAckerman::getRcolor(){
+    return 1.0f;
+}
+
+float roboAckerman::getGcolor(){
+    return 0.0f;
+}
+
+float roboAckerman::getBcolor(){
+    return 0.0f;
 }

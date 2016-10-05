@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tela->setGeometry(0, 0, 600, 600);
 
-    robo = new roboAckerman();
+    robo = new roboPontual();
     ui->tela->setRobo(robo);
 
     ui->fieldX->setText(QString::number(robo->getX()));
@@ -63,9 +63,11 @@ void MainWindow::keyReleaseEvent(QKeyEvent *e){
 void MainWindow::toAckerman(){
     robo = new roboAckerman();
     ui->tela->setRobo(robo);
+    ui->tela->updateGL();
 }
 
 void MainWindow::toPontual(){
     robo = new roboPontual();
     ui->tela->setRobo(robo);
+    ui->tela->updateGL();
 }

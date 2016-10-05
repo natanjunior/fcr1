@@ -47,3 +47,15 @@ float robo::getTeta(){
 float robo::getVelocidade(){
     return velocidade;
 }
+
+float robo::getRcolor(){
+    return 1.0f;
+}
+
+float robo::getGcolor(){
+    return 1.0f;
+}
+
+float robo::getBcolor(){
+    return 1.0f;
+}
