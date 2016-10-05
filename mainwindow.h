@@ -18,6 +18,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     robo *robo;
+    bool modo;
 
 private:
     Ui::MainWindow *ui;
@@ -28,6 +29,10 @@ protected:
 
 signals:
     void direcaoChanged(int direcao);
+
+public slots:
+    void toAckerman();
+    void toPontual();
 };
 
 #endif // MAINWINDOW_H

@@ -1,6 +1,8 @@
 #ifndef ROBO_H
 #define ROBO_H
 
+#define fatorVirada 5.0f
+#define limiteVirada 30.0f
 
 class robo
 {

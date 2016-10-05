@@ -51,7 +51,7 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="rbPontual">
            <property name="text">
             <string>Pontual</string>
            </property>
@@ -61,7 +61,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="rbAckerman">
            <property name="text">
             <string>Ackerman</string>
            </property>
@@ -350,5 +350,42 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>rbAckerman</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>toAckerman()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>75</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>197</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rbPontual</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>toPontual()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>40</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>176</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>toAckerman()</slot>
+  <slot>toPontual()</slot>
+ </slots>
 </ui>

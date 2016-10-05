@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->tela->setGeometry(0, 0, 600, 600);
 
-    robo = new roboPontual();
+    robo = new roboAckerman();
     ui->tela->setRobo(robo);
 
     ui->fieldX->setText(QString::number(robo->getX()));
@@ -58,4 +58,14 @@ void MainWindow::keyPressEvent(QKeyEvent *e){
 void MainWindow::keyReleaseEvent(QKeyEvent *e){
 //    if (e->key() == Qt::Key_Shift)
 //        this->setShift(0);
+}
+
+void MainWindow::toAckerman(){
+    robo = new roboAckerman();
+    ui->tela->setRobo(robo);
+}
+
+void MainWindow::toPontual(){
+    robo = new roboPontual();
+    ui->tela->setRobo(robo);
 }

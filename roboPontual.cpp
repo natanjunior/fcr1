@@ -7,9 +7,9 @@ roboPontual::roboPontual() : robo(){
     yLoc = y0 = 0;
     raio = 0;
 
-    this->direcao = 0.0f;
-    this->volante = 0.0f;
-    this->velocidade = 0.5f;    //  constante
+    direcao = 0.0f;
+    volante = 0.0f;
+    velocidade = 0.5f;
 }
 
 void roboPontual::calculaDirecao(){
